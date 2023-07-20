@@ -4,6 +4,7 @@ import { TokenMagic, isVideoDisabled, fixPath } from './tokenmagic.js';
 import { dnd5eTemplates } from './autoTemplate/dnd5e.js';
 import { pf2eTemplates } from './autoTemplate/pf2e.js';
 import { witcherTemplates } from './autoTemplate/TheWitcherTRPG.js';
+import { d35eTemplates } from './autoTemplate/d35e.js';
 import { defaultOpacity, emptyPreset } from './constants.js';
 
 const Magic = TokenMagic();
@@ -203,6 +204,8 @@ export class TokenMagicSettings extends FormApplication {
 			'modules/tokenmagic/templates/settings/dnd5e/overrides.html',
 			'modules/tokenmagic/templates/settings/pf2e/categories.html',
 			'modules/tokenmagic/templates/settings/pf2e/overrides.html',
+			'modules/tokenmagic/templates/settings/d35e/categories.html',
+			'modules/tokenmagic/templates/settings/d35e/overrides.html',
 			'modules/tokenmagic/templates/settings/TheWitcherTRPG/categories.html',
 			'modules/tokenmagic/templates/settings/TheWitcherTRPG/overrides.html',
 		]);
@@ -220,6 +223,9 @@ export class TokenMagicSettings extends FormApplication {
 				return pf2eTemplates;
 			case 'TheWitcherTRPG':
 				return witcherTemplates;
+            case 'D35E':
+            case 'd35e':
+                return d35eTemplates;
 			default:
 				return null;
 		}
